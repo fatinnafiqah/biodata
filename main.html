@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatin Nur Afiqah - Manufacturing Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-skyblue: #87CEEB;
+            --secondary-skyblue: #B0E0E6;
+            --primary-royalblue: #4169E1;
+            --secondary-royalblue: #1E3A8A;
+            --pastel-yellow: #FFFACD;
+            --gold-yellow: #FFD700;
+            --text-dark: #1a202c;
+            --text-light: #4a5568;
+            --chemistry-green: #2E8B57;
+            --solar-orange: #FF8C00;
+            --semiconductor-purple: #7b1fa2;
+        }
+
+        body {
+            background-color: var(--primary-skyblue);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(135, 206, 235, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(30, 58, 138, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--secondary-royalblue);
+        }
+
+        .logo i {
+            color: var(--primary-royalblue);
+        }
+
+        .logo span {
+            color: var(--semiconductor-purple);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-royalblue);
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-royalblue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-royalblue);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--secondary-royalblue);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 5% 5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            flex: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .profile-pic {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-royalblue);
+            box-shadow: 0 10px 30px rgba(65, 105, 225, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-pic-bg {
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-royalblue), var(--secondary-royalblue));
+            opacity: 0.1;
+            z-index: 1;
+            animation: pulse 4s infinite;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-royalblue);
+            line-height: 1.1;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: var(--primary-royalblue);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--chemistry-green);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--solar-orange);
+        }
+
+        .contact-item i {
+            color: var(--primary-royalblue);
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-royalblue);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(65, 105, 225, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-royalblue);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: var(--secondary-skyblue);
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-royalblue);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary-royalblue);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 1rem auto 0;
+            line-height: 1.6;
+        }
+
+        /* Education Section */
+        .education-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .education-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary-royalblue);
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-item h3 {
+            color: var(--secondary-royalblue);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-period {
+            color: var(--primary-royalblue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background-color: rgba(65, 105, 225, 0.1);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+        }
+
+        .education-desc {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Chemistry & Solar Elements */
+        .chemistry-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--chemistry-green);
+            font-size: 1.5rem;
+        }
+
+        .solar-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            color: var(--solar-orange);
+            font-size: 1.5rem;
+        }
+
+        /* Experience Section */
+        .experience-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .experience-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid var(--primary-royalblue);
+            position: relative;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-period {
+            color: var(--primary-royalblue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item h3 {
+            color: var(--secondary-royalblue);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--secondary-royalblue);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category h3 i {
+            color: var(--primary-royalblue);
+        }
+
+        .skill-list {
+            list-style-type: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: var(--gold-yellow);
+        }
+
+        /* Leadership Section */
+        .leadership-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .leadership-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            min-width: 200px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-bottom: 3px solid transparent;
+            position: relative;
+        }
+
+        .leadership-item:hover {
+            transform: translateY(-5px);
+            border-bottom: 3px solid var(--primary-royalblue);
+        }
+
+        .leadership-role {
+            color: var(--primary-royalblue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Achievement Section */
+        .achievement-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .achievement-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(65, 105, 225, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-royalblue);
+            font-size: 1.5rem;
+        }
+
+        /* Science & Technology Elements */
+        .science-elements {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .star-particle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: var(--pastel-yellow);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            opacity: 0.8;
+            animation: float 20s infinite linear;
+        }
+
+        .molecule {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--chemistry-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.1;
+        }
+
+        .molecule::before, .molecule::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background-color: var(--chemistry-green);
+            opacity: 0.1;
+        }
+
+        .molecule::before {
+            transform: rotate(45deg);
+        }
+
+        .molecule::after {
+            transform: rotate(-45deg);
+        }
+
+        .solar-flare {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(255,140,0,0.1) 0%, rgba(255,140,0,0) 70%);
+            border-radius: 50%;
+            animation: pulse 3s infinite;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-royalblue);
+            padding: 3rem 5%;
+            text-align: center;
+            margin-top: 5rem;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-royalblue);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links a:hover {
+            background-color: var(--pastel-yellow);
+            color: var(--secondary-royalblue);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(100px, 100px) rotate(90deg);
+            }
+            50% {
+                transform: translate(50px, 200px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-50px, 150px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 8rem;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .profile-pic {
+                width: 300px;
+                height: 300px;
+            }
+
+            .profile-pic-bg {
+                width: 330px;
+                height: 330px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .mobile-nav {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-skyblue);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+                z-index: 1000;
+            }
+
+            .mobile-nav.active {
+                display: flex;
+            }
+
+            .mobile-nav a {
+                padding: 1rem 5%;
+                text-decoration: none;
+                color: var(--secondary-royalblue);
+                font-weight: 500;
+                transition: background-color 0.3s;
+            }
+
+            .mobile-nav a:hover {
+                background-color: var(--secondary-skyblue);
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .profile-pic {
+                width: 250px;
+                height: 250px;
+            }
+
+            .profile-pic-bg {
+                width: 280px;
+                height: 280px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Science & Technology Background Elements -->
+    <div class="science-elements">
+        <!-- Star Particles -->
+        <div class="star-particle" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
+        <div class="star-particle" style="top: 20%; left: 80%; animation-delay: 1s;"></div>
+        <div class="star-particle" style="top: 50%; left: 15%; animation-delay: 2s;"></div>
+        <div class="star-particle" style="top: 70%; left: 70%; animation-delay: 3s;"></div>
+        <div class="star-particle" style="top: 85%; left: 30%; animation-delay: 4s;"></div>
+        <div class="star-particle" style="top: 40%; left: 90%; animation-delay: 5s;"></div>
+        <div class="star-particle" style="top: 60%; left: 50%; animation-delay: 6s;"></div>
+        <div class="star-particle" style="top: 30%; left: 40%; animation-delay: 7s;"></div>
+        
+        <!-- Chemistry Molecules -->
+        <div class="molecule" style="top: 15%; left: 20%;"></div>
+        <div class="molecule" style="top: 75%; left: 80%;"></div>
+        <div class="molecule" style="top: 40%; left: 60%;"></div>
+        
+        <!-- Solar Flares -->
+        <div class="solar-flare" style="top: 25%; left: 85%; animation-delay: 0.5s;"></div>
+        <div class="solar-flare" style="top: 65%; left: 10%; animation-delay: 1.5s;"></div>
+    </div>
+
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-atom"></i>
+                <span>FNA</span>Engineering
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#leadership">Leadership</a>
+                <a href="#achievements">Achievements</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home" style="background-color: transparent; box-shadow: none;">
+        <div class="hero-content">
+            <h1>FATIN NUR AFIQAH<br>BINTI MOHD YUSRI</h1>
+            <h2>Manufacturing Engineering Researcher</h2>
+            <p>Postgraduate researcher with a strong foundation in materials, corrosion, and photovoltaic device fabrication. Currently pursuing a Master of Science in Manufacturing Engineering at Universiti Malaysia Perlis, with research focused on improving the electrical properties of Cu₂O-based photovoltaic devices through aluminum and sodium co-doping via electrodeposition.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Kedah, Malaysia</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>010-7641776</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>fatin.n.afiqah70@gmail.com</span>
+                </div>
+            </div>
+            
+            <a href="#education" class="btn">Explore My Journey <i class="fas fa-arrow-down"></i></a>
+        </div>
+        
+        <div class="hero-image">
+            <div class="profile-pic-bg"></div>
+            <!-- Replace with your actual PNG image -->
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fatin Nur Afiqah" class="profile-pic">
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-title">
+            <h2>Education</h2>
+            <p>My academic journey in Manufacturing Engineering</p>
+        </div>
+        
+        <div class="education-container">
+            <div class="education-item">
+                <i class="fas fa-flask chemistry-icon"></i>
+                <i class="fas fa-sun solar-icon"></i>
+                <div class="education-period">10/2024 -- Current</div>
+                <h3>Master of Science – Manufacturing Engineering</h3>
+                <p class="education-desc"><strong>Universiti Malaysia Perlis</strong></p>
+                <p class="education-desc">Research titled 'Electrical Properties of Aluminum and Sodium Co-Doping on Cu₂O - Based Photovoltaic Devices by Electrodeposition Method.'</p>
+                <p class="education-desc">Research in collaboration with Toyohashi University of Technology, Japan</p>
+            </div>
+            
+            <div class="education-item">
+                <i class="fas fa-flask chemistry-icon"></i>
+                <div class="education-period">10/2021 -- 07/2024</div>
+                <h3>Bachelor of Manufacturing Engineering with Honors, CGPA 3.25</h3>
+                <p class="education-desc"><strong>Universiti Malaysia Perlis</strong></p>
+                <p class="education-desc">Final Year Project titled 'Assessment of Corrosion Properties of SUS316L Under Oil Palm Empty Fruit Bunch (OPEFB) Waste Environment -- A Case Study'</p>
+            </div>
+            
+            <div class="education-item">
+                <i class="fas fa-tools chemistry-icon"></i>
+                <div class="education-period">05/2018 -- 04/2021</div>
+                <h3>Diploma in Manufacturing Engineering, CGPA 3.42 | MUET Band 4</h3>
+                <p class="education-desc"><strong>Universiti Malaysia Perlis</strong></p>
+                <p class="education-desc">Final Year Project titled 'Design & Development of Window Cleaner: A Hydrodynamic And Impact Water Approach'.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-title">
+            <h2>Experience</h2>
+            <p>Professional and practical work experience</p>
+        </div>
+        
+        <div class="experience-container">
+            <div class="experience-item">
+                <i class="fas fa-utensils chemistry-icon"></i>
+                <div class="experience-period">02/2025 -- Current</div>
+                <h3>F&B Manager</h3>
+                <p class="experience-desc">WARONGTIHH, Local Vendor Food & Dessert Outlet</p>
+                <ul class="skill-list">
+                    <li>Supervised a team and managed daily operations</li>
+                    <li>Oversaw staff scheduling, training, and performance</li>
+                    <li>Handled procurement and stock management</li>
+                    <li>Gained firsthand experience in food practices and community engagement</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <i class="fas fa-shipping-fast chemistry-icon"></i>
+                <div class="experience-period">08/2022 -- 9/2022</div>
+                <h3>Clerk</h3>
+                <p class="experience-desc">J&T Express Malaysia</p>
+                <ul class="skill-list">
+                    <li>Communicated effectively with diverse customers</li>
+                    <li>Handled daily clerical and administrative tasks</li>
+                    <li>Coordinated with delivery staff and customers</li>
+                    <li>Responded to customer inquiries efficiently</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <i class="fas fa-sun solar-icon"></i>
+                <div class="experience-period">06/2021 -- 10/2021</div>
+                <h3>Rework Operator</h3>
+                <p class="experience-desc">Jinko Solar Technology Sdn Bhd</p>
+                <ul class="skill-list">
+                    <li>Inspected, identified, and repaired defective solar cells/modules</li>
+                    <li>Collaborated with global teams</li>
+                    <li>Engaged in continuous quality improvement processes</li>
+                    <li>Met company quality standards</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-title">
+            <h2>Skills & Languages</h2>
+            <p>Technical abilities and language proficiency</p>
+        </div>
+        
+        <div class="skills-container">
+            <div class="skill-category">
+                <i class="fas fa-flask chemistry-icon"></i>
+                <h3><i class="fas fa-language"></i> Languages</h3>
+                <ul class="skill-list">
+                    <li>Malay (Fluent)</li>
+                    <li>English (Fluent)</li>
+                    <li>Japanese (Beginner)</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <i class="fas fa-sun solar-icon"></i>
+                <h3><i class="fas fa-laptop-code"></i> Software</h3>
+                <ul class="skill-list">
+                    <li>Microsoft Word & PowerPoint (Advanced)</li>
+                    <li>AutoCAD (Intermediate)</li>
+                    <li>SolidWorks (Intermediate)</li>
+                    <li>NX (Intermediate)</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <i class="fas fa-atom chemistry-icon"></i>
+                <h3><i class="fas fa-user-cog"></i> Professional Skills</h3>
+                <ul class="skill-list">
+                    <li>Leadership</li>
+                    <li>Reliability</li>
+                    <li>Critical Thinking</li>
+                    <li>Time Management</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership">
+        <div class="section-title">
+            <h2>Leadership & Extracurricular</h2>
+            <p>Involvement in university activities and organizations</p>
+        </div>
+        
+        <div class="leadership-container">
+            <div class="leadership-item">
+                <i class="fas fa-users chemistry-icon"></i>
+                <div class="leadership-role">PARTICIPANT</div>
+                <p>MTUN RISE 2025 at UMPSA</p>
+            </div>
+            
+            <div class="leadership-item">
+                <i class="fas fa-user-tie chemistry-icon"></i>
+                <div class="leadership-role">SECRETARY</div>
+                <p>UniMAP's NICE 2024</p>
+            </div>
+            
+            <div class="leadership-item">
+                <i class="fas fa-money-bill-wave chemistry-icon"></i>
+                <div class="leadership-role">TREASURER</div>
+                <p>UniMAP's NICE 8</p>
+            </div>
+            
+            <div class="leadership-item">
+                <i class="fas fa-graduation-cap chemistry-icon"></i>
+                <div class="leadership-role">TREASURER</div>
+                <p>UniMAP's FESTKON18</p>
+            </div>
+            
+            <div class="leadership-item">
+                <i class="fas fa-hands-helping chemistry-icon"></i>
+                <div class="leadership-role">ACTIVE MEMBER</div>
+                <p>Harmoni Club (2022 -- Current)</p>
+            </div>
+            
+            <div class="leadership-item">
+                <i class="fas fa-campground chemistry-icon"></i>
+                <div class="leadership-role">PARTICIPANT</div>
+                <p>Kem Ganas: SELECT 2.0</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="section-title">
+            <h2>Achievements</h2>
+            <p>Awards and recognitions received during my academic journey</p>
+        </div>
+        
+        <div class="achievement-container">
+            <div class="achievement-item">
+                <div class="achievement-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div>
+                    <h3>GOLD AWARD</h3>
+                    <p>Postgraduate Research Poster Competition iFuture UniMAP</p>
+                </div>
+            </div>
+            
+            <div class="achievement-item">
+                <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <div>
+                    <h3>GOLD AWARD</h3>
+                    <p>IDEA Bestari 2025</p>
+                </div>
+            </div>
+            
+            <div class="achievement-item">
+                <div class="achievement-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h3>DEAN AWARD</h3>
+                    <p>Sem 1 2023/2024, Sem 2 2023/2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="section-title" style="color: white;">
+                <h2 style="color: white;">References</h2>
+            </div>
+            
+            <div class="contact-info" style="justify-content: center; margin-bottom: 2rem; background-color: rgba(255,255,255,0.1);">
+                <div class="contact-item" style="background-color: rgba(255,255,255,0.2); border-left: 3px solid var(--pastel-yellow);">
+                    <i class="fas fa-user-tie"></i>
+                    <div>
+                        <strong>TS DR AZMI BIN HARUN</strong><br>
+                        Program Chairman: Bachelor of Manufacturing Engineering<br>
+                        Faculty of Mechanical Engineering Technology<br>
+                        University Malaysia Perlis (UniMAP)<br>
+                        Email: azmiharun@unimap.edu.my<br>
+                        Contact: 016-2125374
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="mailto:fatin.n.afiqah70@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-file-pdf"></i></a>
+                <a href="tel:0107641776"><i class="fas fa-phone"></i></a>
+            </div>
+            
+            <p class="copyright">© 2025 Fatin Nur Afiqah. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mobileNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(30, 58, 138, 0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(30, 58, 138, 0.1)';
+            }
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.education-item, .experience-item, .skill-category, .leadership-item, .achievement-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+        
+        // Add chemistry/solar icons to education items
+        document.querySelectorAll('.education-item').forEach((item, index) => {
+            const chemistryIcon = item.querySelector('.chemistry-icon');
+            const solarIcon = item.querySelector('.solar-icon');
+            
+            // Animate icons on hover
+            item.addEventListener('mouseenter', () => {
+                if(chemistryIcon) chemistryIcon.style.transform = 'rotate(20deg) scale(1.2)';
+                if(solarIcon) solarIcon.style.transform = 'rotate(-20deg) scale(1.2)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                if(chemistryIcon) chemistryIcon.style.transform = 'rotate(0) scale(1)';
+                if(solarIcon) solarIcon.style.transform = 'rotate(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
